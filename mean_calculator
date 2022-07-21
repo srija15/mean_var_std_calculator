@@ -1,0 +1,20 @@
+import statistics
+import numpy as np
+def calculate_list(list1):
+    
+    l=np.array(list1).reshape(3,3)
+    
+    
+    a=[np.mean(l,axis=0),np.mean(l,axis=1),np.mean(l)]
+    b=[np.var(l,axis=0),np.var(l,axis=1),np.var(l)]
+    c=[np.std(l,axis=0),np.std(l,axis=1),np.std(l)]
+    d=[np.max(l,axis=0),np.max(l,axis=1),np.max(l)]
+    e=[np.min(l,axis=0),np.min(l,axis=1),np.min(l)]
+    f=[np.sum(l,axis=0),np.sum(l,axis=1),np.sum(l)]
+    result={ 'mean':[a],'variance':[b],'standard deviation':[c],'max':[d],'min':[e],'sum':[f]  }
+    return result
+lst=[0,1,2,3,4,5,6,7,8]
+if len(lst)<9:
+    print('List must contain nine numbers.')
+else:
+    print(calculate_list(lst))
